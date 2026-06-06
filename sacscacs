@@ -375,7 +375,7 @@ local CONFIG = {
         'Bobazmalibu', 'H3llSANG3LX', 'Xcallmeholly', 'Niniko_201999',
     },
     SHOW_VERIFIED_FRIEND = false,
-    FRIEND_PARTNER = true,
+    FRIEND_PARTNER = false,
     REMOVE_PARTNER_PETS_ON_CONFIRM = false,
 }
 
