@@ -843,7 +843,7 @@ local function hookTradeFunctions()
                 self.local_trade_state = newState
                 if mockState.trade then mockState.trade.subscriber_count = CONFIG.SPECTATOR_COUNT end
                 if self._on_local_trade_state_changed then self:_on_local_trade_state_changed(newState, newState) end
-                if self.refresh_all then self:refresh_all() FriendHighlight(true) end
+                if self.refresh_all then self:refresh_all() FriendHighlight(false) end
             else
                 mockState.trade = nil
                 mockState.active = false
@@ -1115,7 +1115,7 @@ local function startMockTradeDirectly()
         
         -- Show trade UI
         pcall(function() UIManager.set_app_visibility('TradeApp', true) end)
-        pcall(function() FriendHighlight(true) end)
+        pcall(function() FriendHighlight(false) end)
         
         -- Show intro message (public chat notice)
         pcall(function()
@@ -1128,7 +1128,7 @@ local function startMockTradeDirectly()
         pcall(function() 
             if TradeApp.refresh_all then 
                 TradeApp:refresh_all() 
-                FriendHighlight(true) 
+                FriendHighlight(false) 
             end 
         end)
     end)
@@ -2012,7 +2012,7 @@ spectatorBox.FocusLost:Connect(function()
         ORIGINAL_SPECTATOR_COUNT = value
         if mockState.trade then
             mockState.trade.subscriber_count = value
-            if TradeApp.refresh_all then TradeApp:refresh_all() FriendHighlight(true) end
+            if TradeApp.refresh_all then TradeApp:refresh_all() FriendHighlight(false) end
         end
     else
         spectatorBox.Text = tostring(CONFIG.SPECTATOR_COUNT)
