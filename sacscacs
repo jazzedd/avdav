@@ -113,14 +113,14 @@ local PlayerProfileApp = Apps.PlayerProfileApp
 local NegotiationFrame = Players.LocalPlayer.PlayerGui.TradeApp.Frame.NegotiationFrame
 
 local function FriendHighlight(FriendValue)
-    NegotiationFrame.FriendHighlight.Visible = FriendValue
-    NegotiationFrame.FriendBorder.Visible = FriendValue
+    NegotiationFrame.FriendHighlight.Visible = false
+    NegotiationFrame.FriendBorder.Visible = false
     local PartnerFrame = NegotiationFrame.Header.PartnerFrame
-    NegotiationFrame.Header.PartnerFrame.NameLabel.FriendLabel.Visible = FriendValue
-    local ColorThemeManagerColor = ColorThemeManager.lookup(FriendValue and 'background' or 'saturated')
+    NegotiationFrame.Header.PartnerFrame.NameLabel.FriendLabel.Visible = false
+    local ColorThemeManagerColor = ColorThemeManager.lookup('saturated')
     NegotiationFrame.Header.PartnerFrame.ProfileIcon.ImageColor3 = ColorThemeManagerColor
     NegotiationFrame.Header.PartnerFrame.NameLabel.TextColor3 = ColorThemeManagerColor
-    NegotiationFrame.Header.PartnerFrame.Icon.Visible = FriendValue
+    NegotiationFrame.Header.PartnerFrame.Icon.Visible = false
     NegotiationFrame.Header.PartnerFrame.Icon.Image = 'rbxassetid://84667805159408'
 end
 
