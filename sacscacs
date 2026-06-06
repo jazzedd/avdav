@@ -1159,7 +1159,7 @@ local function showTradeRequest()
         ["right"] = "Accept", 
         ["header"] = {
             ["text"] = "Verified Friend",
-            ["icon"] = "rbxassetid://84667805159408" 
+            ["icon"] = "rbxassetid://84613245159408" 
         },
         ["tooltip_options"] = {
             ["force_display_post_trade_values"] = true
